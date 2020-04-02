@@ -42,7 +42,7 @@ char* elements[13] =
         "LUE",
         "LUO",
         "OLE",
-        "IIIIII", //123
+        "I II III", //123
         "III IV V", //345
         "IV V VI", //456
         "II III IV", //234
@@ -62,6 +62,49 @@ char* elements[13] =
         "EEE",
 
     };
+
+	int tabgain[40]=
+	{
+		25, //DEM
+		25, //DOM
+		250, //DEO
+		25, //DOL
+		25, //DUE
+		250, //UO
+		25, //EMU
+		1000, //LED
+		25, //LEM
+		25, //MEL
+		25, //MEO
+		250, //MOL
+		500, //MOU
+		25,  //MUE
+		25, //ODE
+		25, //OUD
+		25, //ELU
+		25, //LEU
+		25, //LUE
+		25, //LUO
+		25, //OLE
+		250, //123
+		60, //345
+		250, //456
+		40, //234
+		25, //135
+		50, //246
+		1000, //111
+		200, //222
+		300, //333
+		400, //444
+		5, //555
+		6, //666
+		100, //MMM
+		100, //OOO
+		100, //UUU
+		100, //DDD
+		100, //LLL
+		100, ///EEE
+	};
 
 
 int get_mise()
@@ -98,7 +141,6 @@ int get_mise()
 int main()
 {
 	system("clear");
-	int mise = get_mise();
 	int credits = 100;
 	char colone1[4];
 	char colone2[4];
@@ -107,6 +149,7 @@ int main()
 	int i =0;
 	while( credits > 0 && mise != 0)
 	{
+			mise = get_mise();
 			srand(time(NULL));
 			int var1 = rand() % 12;
 			int var2 = rand() % 12;
@@ -128,6 +171,8 @@ int main()
 				if(strcmp(combi,combinaisons[i]) == 0)
 				{
 					printf("gagne\n");
+					credits = credits + tabgain[i] * mise;
+					printf("Credits : %d\n", credits);
 					break;
 				}
 
@@ -135,8 +180,9 @@ int main()
 			if( i == 40 && strcmp(combi,combinaisons[i]) != 0)
 			{
 				printf("perdu\n");
-			}
-			credits -=100;
+				credits = credits - mise;
+				printf("Credits : %d\n", credits);
+			}	
 
 	}
 	return 0;
