@@ -42,17 +42,18 @@ char* elements[13] =
         "LUE",
         "LUO",
         "OLE",
-        "IIIIII",
-        "IIIIV",
-        "IIIVVI",
-        "IVVVI",
-        "IIIIVV",
-        "III",
-        "IIIIII",
-        "IIIIIIIII",
-        "IVIVIV",
-        "VVV",
-        "VIVIVI",
+        "IIIIII", //123
+        "III IV V", //345
+        "IV V VI", //456
+        "II III IV", //234
+        "I III V", //135
+        "II IV VI", //246
+        "I I I", //111
+        "II II II", //222
+        "III III III", //333
+        "IV IV IV", //444
+        "V V V", //555
+        "VI VI VI", //666
         "MMM",
         "OOO",
         "UUU",
