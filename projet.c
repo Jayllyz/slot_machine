@@ -42,17 +42,18 @@ char* elements[13] =
         "LUE",
         "LUO",
         "OLE",
-        "IIIIII",
-        "IIIIV",
-        "IIIVVI",
-        "IVVVI",
-        "IIIIVV",
-        "III",
-        "IIIIII",
-        "IIIIIIIII",
-        "IVIVIV",
-        "VVV",
-        "VIVIVI",
+        "IIIIII", //123
+        "III IV V", //345
+        "IV V VI", //456
+        "II III IV", //234
+        "I III V", //135
+        "II IV VI", //246
+        "I I I", //111
+        "II II II", //222
+        "III III III", //333
+        "IV IV IV", //444
+        "V V V", //555
+        "VI VI VI", //666
         "MMM",
         "OOO",
         "UUU",
@@ -103,6 +104,7 @@ int main()
 	char colone2[4];
 	char colone3[4];
 	char combi[12];
+	int i =0;
 	while( credits > 0 && mise != 0)
 	{
 			srand(time(NULL));
@@ -119,8 +121,21 @@ int main()
 			strcpy(combi,colone1);
 			strcat(combi,colone2);
 			strcat(combi,colone3);
-			printf("combi : %s", combi);
+			printf("combi : %s\n", combi);
 
+			for(i =0; i <40; i++) 
+			{
+				if(strcmp(combi,combinaisons[i]) == 0)
+				{
+					printf("gagne\n");
+					break;
+				}
+
+			}
+			if( i == 40 && strcmp(combi,combinaisons[i]) != 0)
+			{
+				printf("perdu\n");
+			}
 			credits -=100;
 
 	}
