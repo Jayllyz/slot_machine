@@ -134,6 +134,11 @@ int get_mise()
 	{
 		return atoi(scan);
 	}
+	else
+	{
+		printf("Impossible !");
+		get_mise();
+	}
 	return 0;
 }
 
@@ -142,12 +147,13 @@ int main()
 {
 	system("clear");
 	int credits = 100;
+	int mise;
 	char colone1[4];
 	char colone2[4];
 	char colone3[4];
 	char combi[12];
 	int i =0;
-	while( credits > 0 && mise != 0)
+	while(credits - mise > 0)
 	{
 			mise = get_mise();
 			srand(time(NULL));
@@ -184,6 +190,10 @@ int main()
 				printf("Credits : %d\n", credits);
 			}	
 
+	}
+	if(credits - mise < 0)
+	{
+		printf("Credits insuffisant ! ");
 	}
 	return 0;
 }
