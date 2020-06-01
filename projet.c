@@ -212,7 +212,7 @@ int main()
 				}
 
 			}
-			if( i == 40 && strcmp(combi,combinaisons[i]) != 0)//si la dernier est fausse le joueur a perdu
+			if( i == 40 && strcmp(combi,combinaisons[i]) != 0)//si la dernière est fausse le joueur a perdu
 			{
 				credits = credits - mise;
 				cursorPosition(25,10);
