@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifndef FONCTIONS_H
+#define FONCTIONS_H
+
 void cursorPosition(int YPos, int XPos) //Fonction pour déplacer le curseur
 {
     printf("\033[%d;%dH",YPos,XPos);
@@ -86,3 +89,5 @@ char* concatener(const char *a, const char *b, const char *c )
 	}
 	return combi;
 }
+
+#endif
